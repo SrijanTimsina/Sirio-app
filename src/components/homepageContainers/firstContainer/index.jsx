@@ -11,6 +11,13 @@ import Telegram from "../../../assets/BrandingAssets-main/Icons/telegram_black.s
 import MainImage from "../../../assets/BrandingAssets-main/Graphics/MainImg.png";
 
 const FirstContainer = (props) => {
+	const showMore = () => {
+		const scrollAmount = document.documentElement.clientHeight;
+		window.scroll({
+			top: scrollAmount,
+			behavior: "smooth",
+		});
+	};
 	return (
 		<div
 			className="first-container inner-container"
@@ -92,7 +99,9 @@ const FirstContainer = (props) => {
 				</div>
 			</div>
 			<div className="show-more">
-				<p id="show-more-btn">Show More &nbsp; &darr;</p>
+				<p id="show-more-btn" onClick={showMore}>
+					Show More &nbsp; &darr;
+				</p>
 			</div>
 		</div>
 	);
