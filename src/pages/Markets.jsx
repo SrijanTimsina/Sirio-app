@@ -1,3 +1,11 @@
+import MarketsContainer from "../components/marketscontainer";
+import ModalConnectWallet from "../components/ModalConnectWallet";
+
 export default function Markets() {
-  return <h1>Markets Page</h1>;
+  return (
+    <div className='content-container dashboard-container active-page'>
+      <ModalConnectWallet />
+      <MarketsContainer />
+    </div>
+  );
 }

@@ -6,6 +6,7 @@ import Markets from "./pages/Markets";
 import Vote from "./pages/Vote";
 import HomeRootLayout from "./pages/HomeRoot";
 import HomePage from "./pages/HomePage";
+import { ModalContextProvider } from "./util/modalContext";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      <RouterProvider router={router} />
+      <ModalContextProvider>
+        <RouterProvider router={router} />
+      </ModalContextProvider>
     </>
   );
 }

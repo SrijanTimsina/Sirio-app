@@ -3,11 +3,15 @@ import Header from "../components/header";
 import Footer from "../components/Footer";
 
 export default function AppRootLayout() {
-  return (
-    <>
-      <Header />
-      <Outlet />
-      <Footer />
-    </>
-  );
+	window.onscroll = null;
+
+	return (
+		<>
+			<div className="app-page">
+				<Header />
+				<Outlet />
+			</div>
+			<Footer />
+		</>
+	);
 }

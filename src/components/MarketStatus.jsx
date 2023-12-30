@@ -15,7 +15,7 @@ export default function MarketStatus() {
             collateral={true}
           />
           <MarketListItem
-            title='WBTC'
+            title='BTC'
             img={iconImg}
             apy={2}
             amount={100}
@@ -32,7 +32,7 @@ export default function MarketStatus() {
             availableBorrow={10}
           />
           <MarketListItem
-            title='WBTC'
+            title='BTC'
             img={iconImg}
             apy={2}
             amount={100}

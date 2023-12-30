@@ -1,8 +1,23 @@
+import Sidebar from "../components/sidebar";
+import { useState } from "react";
+import HomePageMain from "../components/homePageMain";
+
 export default function HomePage() {
-  return (
-    <>
-      <h1>This is the Home Page</h1>
-      <a href='http://localhost:5173/app'>Launch App</a>
-    </>
-  );
+	const [sidebarStatus, setSidebarStatus] = useState(null);
+	const sidebarSwitch = () => {
+		if (sidebarStatus === null || sidebarStatus === false) {
+			document.body.style.overflow = "hidden";
+			setSidebarStatus(true);
+		} else {
+			document.body.style.overflow = "auto";
+			setSidebarStatus(false);
+		}
+	};
+
+	return (
+		<div>
+			<Sidebar show={sidebarStatus} hide={sidebarSwitch} />
+			<HomePageMain sideBarShow={sidebarSwitch} />
+		</div>
+	);
 }

@@ -1,0 +1,18 @@
+.markets-small {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	flex-basis: 30%;
+	align-items: center;
+}
+.markets-small .small-text {
+	margin-top: 8px;
+	font-size: 12px;
+	padding: 4px;
+	width: max-content;
+	background-color: #3251bf;
+	color: white;
+}
+.markets-inner-container .table-data {
+	margin-top: 10px;
+}
