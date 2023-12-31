@@ -1,8 +1,20 @@
+body .markets-container .markets-inner-container {
+	width: 100%;
+	max-width: 1100px;
+	margin: auto;
+}
+
+body .markets-container .markets-inner-container h2 {
+	font-size: 40px;
+	font-family: "Gilroy-SemiBold", sans-serif;
+	font-weight: 100;
+}
+
 .markets-small {
 	display: flex;
 	width: 100%;
 	flex-direction: column;
-	flex-basis: 30%;
+	flex-basis: 25%;
 	align-items: center;
 }
 .markets-small .small-text {

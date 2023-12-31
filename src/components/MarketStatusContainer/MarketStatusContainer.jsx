@@ -18,7 +18,7 @@ export default function MarketStatusContainer({ title, children }) {
 								<span className="asset-cell">Asset</span>
 								<span>Borrow APY</span>
 								<span>Total Borrow</span>
-								<span>Available Borrow</span>
+								<span className="available">Available Borrow</span>
 							</>
 						)}
 						{title === "All Markets" && (
