@@ -1,12 +1,26 @@
-export default function ModalDashboard({ bal, coinType, max }) {
-  return (
-    <div className='info-dashboard-section'>
-      <h2 className='dashboard-main-balance'>{bal}</h2>
-      <div className='dashboard-mini-info'>
-        <p className='max'>{max && <button>Max</button>}</p>
-        <p>{coinType}</p>
-        <p className='mini-info-balance'>~${bal}</p>
-      </div>
-    </div>
-  );
+export default function ModalDashboard({
+	onChange,
+	coinType,
+	max,
+	bal,
+}) {
+	return (
+		<div className="info-dashboard-section">
+			<h2 className="dashboard-main-balance">
+				$
+				<input
+					pattern="[0-9]+"
+					onChange={(e) => onChange(e)}
+					value={bal}
+					placeholder="0.0"
+					className="dashboard-input"
+				/>
+			</h2>
+			<div className="dashboard-mini-info">
+				<p className="max">{max && <button>Max</button>}</p>
+				<p>{coinType}</p>
+				<p className="mini-info-balance">~$10</p>
+			</div>
+		</div>
+	);
 }

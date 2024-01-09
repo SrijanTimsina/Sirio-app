@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ModalDashboard from "./ModalDashboard";
 import SupplyBox from "./SupplySupply";
 import WithdrawBox from "./SupplyWithdraw";
@@ -8,8 +8,20 @@ import logoImg from "../../assets/BrandingAssets-main/Brand/Icon.png";
 
 export default function ModalSupply() {
 	const [displayState, setDisplayState] = useState("supply");
+	const [bal, setBal] = useState("");
 
 	const modalCtx = useContext(ModalContext);
+
+	useEffect(() => {
+		setBal("");
+	}, [modalCtx]);
+
+	function handleInputChange(e) {
+		let val = e.target.value;
+		if (val >= 0) {
+			setBal(val);
+		}
+	}
 
 	function handleSupplyDisplay() {
 		setDisplayState("supply");
@@ -40,7 +52,12 @@ export default function ModalSupply() {
 					</div>
 					<div className="popup-info-container">
 						<div className="main-info-container">
-							<ModalDashboard bal={10.0} coinType="USDC" max={true} />
+							<ModalDashboard
+								bal={bal}
+								coinType="USDC"
+								max={true}
+								onChange={handleInputChange}
+							/>
 						</div>
 					</div>
 					{displayState === "supply" && <SupplyBox />}

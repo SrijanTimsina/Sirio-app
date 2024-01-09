@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ModalDashboard from "./ModalDashboard";
 import ModalListItem from "./ModalListItem";
 import BorrowBox from "./BorrowBorrow";
@@ -10,8 +10,20 @@ import ModalContext from "../../util/modalContext";
 
 export default function ModalBorrow() {
 	const [displayState, setDisplayState] = useState("borrow");
+	const [bal, setBal] = useState("");
 
 	const modalCtx = useContext(ModalContext);
+
+	useEffect(() => {
+		setBal("");
+	}, [modalCtx]);
+
+	function handleInputChange(e) {
+		let val = e.target.value;
+		if (val >= 0) {
+			setBal(val);
+		}
+	}
 
 	function handleBorrowDisplay() {
 		setDisplayState("borrow");
@@ -43,9 +55,10 @@ export default function ModalBorrow() {
 					<div className="popup-info-container">
 						<div className="main-info-container">
 							<ModalDashboard
-								bal={10.0}
 								coinType="USDC"
 								max={false}
+								onChange={handleInputChange}
+								bal={bal}
 							/>
 							<div className="all-info">
 								<ModalListItem title="Supply APY" value="1.80%" />
